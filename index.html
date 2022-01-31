@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+   <title>Home</title>
+<style>
+body{
+background-image:url("G.gif");
+}
+#home{
+text-align:center;
+margin-top:50%;
+}
+#btn3,#btn4{
+padding:15px;
+margin-top:10px;
+padding-left:80px;
+padding-right:80px;
+background:lime;
+border:none;
+color:brown;
+font-size:15px;
+box-shadow:2px 3px 4px gray; 
+font-weight:bold;
+}
+#btn1,#btn2{
+padding:15px;
+margin-top:15px;
+padding-left:50px;
+padding-right:50px;
+background:lime;
+border:none;
+color:brown;
+font-size:15px;
+
+box-shadow:2px 3px 4px gray; 
+font-weight:bold;
+}
+footer{
+text-align:center;
+font-family:monospace;
+margin-top:20%;
+}
+h2{
+text-align:center;
+font-family:cursive;
+margin-bottom:10%;
+}
+a{
+text-decoration:none;
+color:brown;
+}
+#btn1:hover,#btn2:hover,#btn4:hover{
+padding-left:100px;
+padding-right:100px;
+
+}
+#error{
+text-align:center;
+background:gray;
+padding:15px;
+color:white;
+border-radius:1px;
+position:fixed;
+top:150px;
+display:none;
+}
+#can{
+text-align:right;
+}
+</style>
+</head>
+<body>
+
+<div id="home">
+<h2>The Tic-tac-toe Game</h2>
+<button id="btn1"><a href="XandO.html">Play with friend</a></button><br/>
+<button id="btn2">play with computer</button><br/>
+<button id="btn4"><a href="Me.html">About</a></button><br/>
+</div>
+<div id="error">
+<div id="can">
+<button id="c">X</button>
+</div>
+<p>Sorry this is not yet available in this version..But will be<br/>
+available in version 1.5...Bear with us.. Thank you</p>
+</div>
+<footer>
+<p>2022©,Hunta plc,version 1.0</p>
+<footer>
+<script>
+document.getElementById("btn2").onclick=error;
+document.getElementById("c").onclick=cancel;
+
+function error(){
+document.getElementById("error").style.display="block";
+
+}
+function cancel(){
+document.getElementById("error").style.display="none";
+
+
+}
+
+</script>
+</body>
+</html>
