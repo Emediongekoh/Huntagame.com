@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+
+   <title>RockPaperScissors</title>
+<style>
+body{
+background-image:url("Bac.jpg");
+background-size:cover;
+}
+#Head{
+background:black; 
+padding:15px;
+margin:-10px;
+border:2px solid lime; 
+box-shadow:0px 0px 10px lime,inset 0px 0px 10px lime; 
+}
+#M{
+float:right;
+}
+a{
+text-decoration:none;
+color:lime;
+}
+#name{
+color:lime;
+}
+#computer{
+text-align:center;
+border:2px solid lime; 
+margin-top:15px;
+}
+#computer2{
+text-align:center;
+border:2px solid lime; 
+margin-top:15px;
+}
+img{
+margin:5px;
+border-radius:15px;
+border:2px solid lime; 
+margin-top:15px;
+box-shadow:0px 0px 10px lime,inset 0px 0px 10px lime; 
+}
+#you,#me{
+color:lime;
+border:2px solid lime;
+margin-right:150px;
+border-radius:3px;
+box-shadow:0px 0px 5px lime,inset 0px 0px 5px lime; 
+}
+#info{
+text-align:center;
+color:lime;
+}
+#slide{
+width:0%;
+background:lime;
+color:white;
+position:fixed;
+top:0px;
+left:0px;
+height:100%;
+text-align:center;
+padding-top:50px;
+border:2px solid black; 
+opacity:0;
+box-shadow:2px 3px 10px black; 
+display:none;
+transition:1s;
+overflow-y:scroll;
+}
+#slide>a{
+color:white;
+text-align:center;
+line-height:80px;
+font-size:20px;
+font-weight:bold;
+}
+#slide>a:hover{
+font-size:27px;
+}
+#can{
+text-align:right;
+}
+#can>button{
+padding:10px;
+border:none;
+}
+#M{
+border:none;
+background:black;
+color:lime;
+outline:none;
+text-size:25px;
+}
+kbd{
+color:red;
+font-size:15px;
+}
+</style>
+</head>
+<body>
+<div id="Head">
+<a id="h" href="index.html">Home</a>
+<button id="M" href="">Menu</button>
+</div>
+<br/>
+<div id="slide">
+<div id="can">
+<button id="btn">X</button>
+</div>
+<a  href="https://www.facebook.com/emerako.biifur">See Me</a><br/>
+<a  href="Me.html">About</a><br/>
+<a  href="index.html">Home</a><br/>
+<a  href="Message.html">Advertise</a><br/><br/><br/>
+<kbd>when you click on the advertise,send us "ADVERTISE" as message so we will know</kbd><br/><br/><br/><br/><br/><br/>
+</div>
+<div id="computer">
+<img id="a" src="Rock.jpg" width="50" height="50" alt="rock"/>
+<img id="b" src="Pa.jpg" width="50" height="50" alt="rock"/>
+<img id="c" src="Sci.jpg" width="50" height="50" alt="rock"/>
+<p id="name">Computer:<span id="ans1"></span></p>
+</div>
+<div id="score">
+<p id="me">Computer:<span id="sc1">0</span></p>
+<p id="you">Your score:<span id="sc2">0</span></p>
+</div>
+<p id="info">Choose one</p>
+<div id="computer2">
+<img id="R" src="Rock.jpg" width="50" height="50" alt="rock"/>
+<img id="p" src="Pa.jpg" width="50" height="50" alt="rock"/>
+<img id="s" src="Sci.jpg" width="50" height="50" alt="rock"/>
+<p id="name">You:<span id="ans2"></span></p>
+</div>
+
+<script>
+var decision=0;
+var you=0;
+var com=0;
+var name; 
+var rand;
+document.getElementById("R").onclick=Rock;
+document.getElementById("p").onclick=paper;
+document.getElementById("s").onclick=sci;
+document.getElementById("M").onclick=out;
+document.getElementById("btn").onclick=iny;
+
+function Rock(){
+decision+=1;
+if(decision ==1){
+name="Rock";
+document.getElementById("ans2").innerHTML="Rock";
+document.getElementById("info").innerHTML="computer's turn..wait";
+
+}
+setTimeout(comp,1500);
+}
+
+function paper(){
+decision+=1;
+if(decision ==1){
+name="Paper";
+document.getElementById("ans2").innerHTML="Paper";
+document.getElementById("info").innerHTML="Computer's turn..wait";
+}
+setTimeout(comp,1500);
+}
+
+function sci(){
+decision+=1;
+if(decision ==1){
+name="Sci";
+document.getElementById("ans2").innerHTML="Scissors";
+document.getElementById("info").innerHTML="computer's turn..wait";
+}
+setTimeout(comp,1500);
+}
+
+function comp(){
+rand=Math.floor(Math.random()*3)+1;
+switch(rand){
+case 1:
+document.getElementById("ans1").innerHTML="Scissors";
+break; 
+case 2:
+document.getElementById("ans1").innerHTML="Rock";
+break; 
+case 3:
+document.getElementById("ans1").innerHTML="paper";
+break; 
+}
+if(name=="Rock"&&rand==2){
+document.getElementById("info").innerHTML="It's a draw..wait!! ";
+decision=0;
+setTimeout(reset,2000);
+}
+
+if(name=="Paper"&&rand==3){
+document.getElementById("info").innerHTML="It's a draw..wait!! ";
+decision=0;
+setTimeout(reset,2000);
+}
+
+if(name=="Sci"&&rand==1){
+document.getElementById("info").innerHTML="It's a draw..wait.. ";
+decision=0;
+setTimeout(reset,2000);
+}
+
+if(name=="Sci"&&rand==3){
+document.getElementById("info").innerHTML="You win..wait!! ";
+decision=0;
+you+=1;
+document.getElementById("sc2").innerHTML=you;
+setTimeout(reset,2000);
+
+}
+
+if(name=="Paper"&&rand==2){
+document.getElementById("info").innerHTML="You win..wait!! ";
+decision=0;
+you+=1;
+document.getElementById("sc2").innerHTML=you;
+setTimeout(reset,2000);
+
+}
+
+if(name=="Rock"&&rand==1){
+document.getElementById("info").innerHTML="You win..wait!! ";
+decision=0;
+you+=1;
+document.getElementById("sc2").innerHTML=you;
+setTimeout(reset,2000);
+
+}
+
+if(name=="Paper"&&rand==1){
+document.getElementById("info").innerHTML="computer wins..wait!! ";
+decision=0;
+com+=1;
+document.getElementById("sc1").innerHTML=com;
+setTimeout(reset,2000);
+
+}
+
+if(name=="Rock"&&rand==3){
+document.getElementById("info").innerHTML="computer wins..wait!! ";
+decision=0;
+com+=1;
+document.getElementById("sc1").innerHTML=com;
+setTimeout(reset,2000);
+
+}
+
+if(name=="Sci"&&rand==2){
+document.getElementById("info").innerHTML="computer wins..wait!! ";
+decision=0;
+com+=1;
+document.getElementById("sc1").innerHTML=com;
+setTimeout(reset,2000);
+
+}
+
+}
+
+function reset(){
+document.getElementById("ans1").innerHTML="";
+document.getElementById("info").innerHTML="choose one";
+document.getElementById("ans2").innerHTML="";
+
+}
+
+function out(){
+document.getElementById("slide").style.display="block";
+setTimeout(fadein,500);
+}
+function fadein(){
+document.getElementById("slide").style.opacity=1;
+document.getElementById("slide").style.width="50%";
+}
+function iny(){
+document.getElementById("slide").style.opacity=0;
+document.getElementById("slide").style.width="0%";
+document.getElementById("slide").style.fontSize="2px";
+setTimeout(fadeout,500);
+}
+function fadeout(){
+document.getElementById("slide").style.display="none";
+}
+</script>
+</body>
+</html>
