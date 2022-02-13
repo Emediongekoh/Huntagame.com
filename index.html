@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+   <title>Home</title>
+<style>
+body{
+background-image:url("K.jpeg");
+background-size:cover;
+height:100%;
+}
+#home{
+text-align:center;
+margin-top:50%;
+}
+#btn4{
+padding:15px;
+margin-top:10px;
+padding-left:95px;
+padding-right:95px;
+background:none;
+border:2px solid lime;
+color:brown;
+font-size:15px;
+box-shadow:2px 3px 4px gray; 
+font-weight:bold;
+border-radius:20px;
+outline:none;
+}
+#btn1{
+padding:15px;
+margin-top:15px;
+padding-left:78px;
+padding-right:78px;
+background:none;
+border:2px solid lime;
+color:brown;
+font-size:15px;
+border-radius:20px;
+box-shadow:2px 3px 4px gray; 
+font-weight:bold;
+outline:none;
+}
+#btn2{
+padding:15px;
+margin-top:15px;
+padding-left:40px;
+padding-right:40px;
+background:none;
+border:2px solid lime;
+color:brown;
+font-size:15px;
+border-radius:20px;
+box-shadow:2px 3px 4px gray; 
+font-weight:bold;
+outline:none;
+}
+
+#btn3{
+padding:15px;
+margin-top:15px;
+padding-left:90px;
+padding-right:90px;
+background:none;
+border:2px solid lime;
+color:brown;
+font-size:15px;
+border-radius:20px;
+box-shadow:2px 3px 4px gray; 
+font-weight:bold;
+outline:none;
+}
+
+#btn5{
+
+padding:15px;
+margin-top:15px;
+padding-left:85px;
+padding-right:85px;
+background:none;
+border:2px solid lime;
+color:brown;
+font-size:15px;
+border-radius:20px;
+box-shadow:2px 3px 4px gray; 
+font-weight:bold;
+outline:none;
+}
+
+
+footer{
+text-align:center;
+font-family:monospace;
+margin-top:20%;
+}
+h2{
+text-align:center;
+font-family:courier;
+font-style:italic;
+color:lime;
+margin-bottom:-50%;
+margin-top:90px;
+text-shadow:2px 2px 5px gray; 
+border:2px solid lime;
+padding:10px;
+border-radius:5px 0px 5px 0px; 
+background-image:url("K.jpeg");
+box-shadow:2px 3px 10px gray; 
+}
+a{
+text-decoration:none;
+color:brown;
+}
+#btn1:hover,#btn2:hover,#btn4:hover{
+padding-left:100px;
+padding-right:100px;
+
+}
+
+#status{
+text-align:center;
+color:green;
+border:2px solid green;
+border-radius:15px;
+background:white;
+}
+
+</style>
+</head>
+<body>
+<h2>HUNTA MULTI GAMES</h2>
+<div id="home">
+<a href="XandO.html"><button id="btn1">Tic-tac-toe </button></a><br/>
+<a href="RPS.html"><button id="btn2">Rock-paper-scissors</button></a><br/>
+<a href="Mail.html"><button id="btn3">Report</button></a><br/>
+<a href="Message.html"><button id="btn5">Message</button></a><br/>
+<a href="Me.html"><button id="btn4">About</button></a><br/>
+</div>
+<br/>
+<div id="status">
+<p id="line"></p>
+<img id="ig"src="" width="50" height="50" alt="faces"/>
+</div>
+<footer>
+<p>2022©,Hunta plc,version 1.2</p>
+<footer>
+<script>
+document.body.onload=detect;
+
+function lines(){
+if(navigator.onLine==true){
+document.getElementById("ig").style.display="inline-block";
+document.getElementById("line").innerHTML="You are <b>online</b>";
+document.getElementById("ig").src="Q.jpg";
+document.getElementById("line").style.color="green";
+
+}
+else{
+document.getElementById("ig").style.display="none";
+document.getElementById("line").style.color="red";
+document.getElementById("line").innerHTML="You are <b>offline</b>:Game will be better played online"; 
+}
+}
+function detect(){
+setInterval(lines,50);
+}
+</script>
+</body>
+</html>
